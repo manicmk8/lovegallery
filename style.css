@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: linear-gradient(135deg, #ff7aa2, #8a6cff, #ffc66b);
+  background-size: 200% 200%;
+  animation: bgShift 10s infinite alternate;
+  color: #222;
+  text-align: center;
+}
+@keyframes bgShift {
+  0% { background-position: 0 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+
+
+
+header { padding: 20px; color: white; }
+footer { padding: 10px; background: #ffffff77; border-radius: 10px; margin: 20px; }
+
+/* Album Cards */
+.albums {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-left: 70px
+}
+.album-card {
+  background: #f5b2d7;
+  border-radius: 30px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #000;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+  width: 300px;
+
+}
+.album-card:hover { transform: scale(1.10); }
+.album-card img { width: 100%; height: 160px; object-fit:cover; margin: auto;}
+
+/* Gallery Photos */
+.gallery {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+.photo img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  cursor: pointer;
+  border: solid 2px;
+}
+.photo img:hover { transform: scale(1.05); }
+
+/* Back link */
+.back {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  background: #ff3e86;
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #000;
+  animation: zoom 0.4s ease;
+}
+@keyframes zoom { from{transform:scale(0.8);opacity:0} to{transform:scale(1);opacity:1} }
+
+.lightbox .close, .lightbox .nav {
+  position: absolute;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.lightbox .close { top: 20px; right: 20px; }
+.lightbox .prev { left: 30px; }
+.lightbox .next { right: 30px; }
+
+.footer:hover{ transform: scale(1.10); }
+.footer {
+  background: #f5b2d7;
+  border-radius: 30px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #000;
+  box-shadow: 0 6px 20px rgba(105, 83, 83, 0.15);
+  transition: transform 0.3s;
+  width: 80%; 
+
+  
+  
+}
+
